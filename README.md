@@ -1,5 +1,8 @@
 # docker-3tier
 
-db: mariadb
-was: tomcat - springboot
+db: mariadb<br>
+was: tomcat - springboot<br>
 web: apache
+
+
+jenkins - git server
