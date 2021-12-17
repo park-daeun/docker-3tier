@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=ctdx2378@
+    ports:
+      - "3306:3306"
+
+  web-server:
+    image: apache-test
+    ports:
+      - "80:80"
+
+  was:
+    build:
+      context: .
+      dockerfile: ./springboot/Dockerfile
+    ports:
+      - "8080:8080"
+
+  git:
+    image: centos:7
+    tty: true
+    privileged: true
+    init: true
